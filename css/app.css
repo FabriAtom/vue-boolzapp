@@ -1,0 +1,98 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgba(50, 50, 50, 0.5);
+}
+
+
+#container{
+    height: 600px; 
+    width: 800px; 
+    display: flex;
+    padding-top: 100px;
+}
+
+/* contact */
+.contact{
+    height: 600px;
+    width: 250px;
+    background-color: grey;
+}
+
+.menu-contact{
+    height: 60px;
+    width: 250px;
+    background-color:rgba(0, 0, 0, 0.5);
+}
+
+.mio-profilo{
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.img-avatar{
+    width: 60px;
+    height: 60px;
+    border-radius: 40px;
+    margin: 0;
+}
+
+.nome-utente{
+    font-weight: 200px;;
+    color: black;
+    margin: 0;
+}
+
+.search{
+    height: 25px;
+    background-color:rgb(234, 234, 234);
+}
+
+.search-people{
+    padding: 0 20px;
+    align-items: center;
+}
+
+.icon{
+   
+}
+
+
+
+
+/* chat */
+.chat{
+    height: 600px;
+    width: 550px;  
+    background-image:url(/assets/mine.jpg);
+}
+
+.utente-chat{
+    height: 60px;
+    width: 550px;
+    background-color:rgb(234, 234, 234);
+    display: flex;
+    align-items: center;
+}
+
+.send-mex{
+    height: 60px;
+    width: 550px;
+    background-color: rgb(243, 238, 234);
+    margin-top: 480px;
+    display: flex;
+}
+
+.write-message{
+    border-radius: 3px;
+    color: black;
+    background-color: white;
+    padding: 3px;
+    width: 400px;
+    height: 40px;
+}
