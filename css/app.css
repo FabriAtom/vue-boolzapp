@@ -1,23 +1,167 @@
-*{
-    margin: 0 auto;
-    padding: 0;
-    box-sizing: border-box;
+html{
+    font-family: 'Open Sans', sans-serif;
 }
+ul,
+ol,
+menu{
+    list-style: none;
+}
+
+a{
+    color: currentColor;
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+}
+
 
 body{
-    background-color: rgba(50, 50, 50, 0.5);
-}
-
-
-#container{
-    height: 600px; 
-    width: 800px; 
+    height: 100vh;
+    background-color: rgba(220, 220, 220, 1);
     display: flex;
-    padding-top: 100px;
+    align-items: center;
+    justify-content: center;
 }
+
+
+#app{
+    max-width: 90%;
+    width: 100%; 
+    margin: 0 auto;
+    height: 95%;
+    background-color: white;
+    display: flex;
+}
+
+
+.chat,
+.sidebar{
+    /* border: 1px solid black; */
+    /* padding: 20px; */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.sidebar{
+    flex-basis: 380px;
+}
+
+.chat{
+    flex-grow: 1;
+}
+
+.chat .messages {
+    flex-grow: 1;
+    background-image: url('../assets/mine.jpg');
+    background:cover;
+    align-items: stretch;
+}
+
+.sidebar .contacts{
+    flex-grow: 1;
+}
+
+.toolbar{
+    background-color: rgb(200, 200, 200);
+    padding: 5px 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.contact{
+    display: flex;
+    padding: 8px 5px 8px 12px;
+    border-top: 1px solid #dedede;
+}
+
+.contact.active,
+.contact:hover{
+    background-color: #dedede;
+}
+
+.contact-details{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: auto;
+    font-size: 12px;
+}
+
+.contact-access-info{
+    font-size: 12px;
+}
+
+.avatar{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+
+.search{
+    padding: 10px 8px;
+    background-color: #eeeeee;
+}
+
+.search input{
+    border-radius: 5px;
+    height: 35px;
+    padding-left: 45px;
+    border: none;
+    width: 100%;
+}
+
+.messages{
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.message{
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 8px;
+    background-color: white;
+}
+
+.message.sent{
+    align-self: flex-end;
+    background-color: #d5f9ba;
+}
+
+.message.received{
+    align-self: flex-start;
+    background-color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* contact */
-.contact{
+/* .sidebar{
     height: 600px;
     width: 250px;
     background-color: grey;
@@ -65,7 +209,7 @@ body{
 
 
 
-/* chat */
+ 
 .chat{
     height: 600px;
     width: 550px;  
@@ -95,4 +239,4 @@ body{
     padding: 3px;
     width: 400px;
     height: 40px;
-}
+} */

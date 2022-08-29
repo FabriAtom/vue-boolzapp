@@ -1,12 +1,4 @@
-const app =  new Vue ({
-    el: 'container',
-    data: {
-
-    }  
-})
-
-
-contacts: [
+const contacts = [
     {
         name: 'Michele',
         avatar: '_1',
@@ -169,3 +161,10 @@ contacts: [
         ],
     }
 ]
+
+const app = new Vue({
+    el:'#app',
+    data: {
+        contacts,
+    },
+})
