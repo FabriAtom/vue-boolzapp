@@ -27,6 +27,15 @@
                 <i class="fa-solid fa-ellipsis-vertical"></i>
             </div>
 
+            <!-- <div class="notification-contact">
+                <div class="notification-message">
+                    Ricevi notifiche di nuovi messaggi
+                </div>
+                <div class="notification-active">
+                    <a href="#">Attiva notifiche desktop</a>
+                </div>
+            </div> -->
+            
             <div class="search">
                 <input type="text" placeholder="Cerca o inizia una nuova chat"
                 v-model="userFinder">
@@ -59,10 +68,10 @@
             <div class="toolbar">
                 <div class="contact-details">
                     <figure class="avatar">
-                    <img src="./assets/avatar_2.jpg" alt="">
+                    <img :src="'./assets/avatar' + contacts[active].avatar + '.jpg'" alt="">
                     </figure>
                     <div  class="contact-info">
-                    <h3 class="contact_name">Michele</h3>
+                    <h3 class="contact_name">{{ contacts[active].name }}</h3>
                     <p class="last-access">ultimo accesso ...</p>
                     </div>
                 </div>
