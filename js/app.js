@@ -166,5 +166,53 @@ const app = new Vue({
     el:'#app',
     data: {
         contacts,
+        active: 0,
+        text:'',
+        userFinder: '',
+    },
+    methods: {
+        setActive(i) {
+            this.active = i
+        },
+        send() {
+            // togliendo gli spazi
+            const cleanedText = this.text.trim()
+            
+            if (cleanedText === '') return
+
+            // creiamo variabile
+            const messages = this.contacts[ this.active ].messages
+
+            const message = {
+                date: '',
+                message: cleanedText,
+                status: 'sent',
+            }
+            console.log(message)
+
+            messages.push(message)
+            this.text = ''
+
+            setTimeout(() => {
+                // creiamo messaggio
+                const message = {
+                    data:'',
+                    message:'ciao sofia',
+                    status:'received',
+                }
+                console.log(message)
+
+                messages.push(message)
+
+            },1500)
+        },
     },
 })
+
+
+
+
+
+// Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i
+// messaggi relativi al contatto attivo all’interno del pannello della conversazione
+// ● Click sul contatto mostra la conversazione del contatto cliccato

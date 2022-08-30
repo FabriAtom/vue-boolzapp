@@ -28,12 +28,18 @@
             </div>
 
             <div class="search">
-                <input type="text" placeholder="Cerca o inizia una nuova chat">
+                <input type="text" placeholder="Cerca o inizia una nuova chat"
+                v-model="userFinder">
             </div>
 
             <ul class="contacts">
-                <li v-for="contact in contacts" class="contact">
-                    <div class="contact-details">
+                <li 
+                    v-for="(contact, index) in contacts" 
+                    class="contact"
+                    v-show= "contact.name.toLowerCase().includes(userFinder.toLowerCase())" >
+                    <div 
+                        @click="active = index" 
+                        class="contact-details">
                         <figure class="avatar">
                           <img :src="`./assets/avatar${contact.avatar}.jpg`" alt="">
                         </figure>
@@ -55,7 +61,7 @@
                     <figure class="avatar">
                     <img src="./assets/avatar_2.jpg" alt="">
                     </figure>
-                    <div class="contact-info">
+                    <div  class="contact-info">
                     <h3 class="contact_name">Michele</h3>
                     <p class="last-access">ultimo accesso ...</p>
                     </div>
@@ -67,28 +73,18 @@
             </div>
 
             <div class="messages">
-                <div class="message sent">
-                    Ciao
-                </div>
-
-                <div class="message sent">
-                    Ok
-                </div>
-
-                <div class="message received">
-                    Tutto ok
+                 <div class="message" :class="message.status" v-for="(message,i) in contacts[active].messages">
+                     {{message.message}}
                 </div>
             </div>
 
             <div class="add-new-message">
-                <input type="text" placeholder="Scrivi un messaggio">
-
+                <i class="fa-regular fa-face-smile"></i>
+                <input @keyup.enter="send" v-model="text" type="text" placeholder="Scrivi un messaggio">
+                <i class="fa-solid fa-microphone"></i>
             </div>
-
         </div>
-
     </div>
-    
 
     <script src="./js/app.js"></script>
 </body>
